@@ -12,7 +12,7 @@ or add to Gemfile. That's it!
 ### Settings
 ```ruby
 # Tell Modelize in which module to find your model class
-Modelize.module = '::'
+Modelize.module = ''
 
 # If you model class is in the Fu::Models module
 Modelize.module = 'Fu::Models'
