@@ -25,7 +25,7 @@ module Mongo
 
       # Get the model class, BSON::Document if it doesn't exist
       def modelize(doc)
-        Object.const_get("#{Modelize.module}::#{self.collection.name[0..-2].capitalize}").include(::Modelize::Core).new.tap{|m| m.doc = doc} rescue doc
+        Object.const_get("#{Modelize.module}::#{collection.name[0..-2].capitalize}").include(::Modelize::Core).new.tap{|m| m.doc = doc} rescue doc
       end
 
     end
