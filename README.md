@@ -17,7 +17,7 @@ Modelize.enable = true
 # Tell Modelize in which module to find your model class
 Modelize.module = ''
 
-# If you model class is in the Fu::Models module
+# If your model class is in the Fu::Models module
 Modelize.module = 'Fu::Models'
 
 # Debug option
@@ -66,7 +66,7 @@ model.light = 'yes'
 model.description # => 'we need truth'
 model.light # => 'yes'
 
-# And then save them (Minimongo)
+# And then save the changes (Minimongo)
 model.earth = 'undiscovered'
 update(:models, {:_id => m._id}, m.to_h)
 
