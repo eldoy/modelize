@@ -21,3 +21,11 @@ update(:models, {:_id => m._id}, :description => 'zero-g-airplanes')
 m = first(:models, :_id => m._id)
 
 is m.description, 'zero-g-airplanes'
+is m.choco, nil
+
+m.choco = 'loco'
+update(:models, {:_id => m._id}, m.to_h)
+is m.choco, 'loco'
+
+m = first(:models, :_id => m._id)
+is m.choco, 'loco'

@@ -3,11 +3,6 @@ module Modelize
 
     attr_accessor :doc
 
-    # Init, takes a BSON::Document
-    def initialize(doc)
-      @doc = doc
-    end
-
     # Read and write to the BSON::Document
     def method_missing(name, *args, &block)
       # Extract name and write mode

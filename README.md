@@ -32,7 +32,7 @@ require 'modelize'
 
 # Create your model
 class Model
-  # You model content here ...
+  # Your model definitions here ...
 end
 
 # With the Mongodb Ruby driver
@@ -58,6 +58,14 @@ model.description = 'we need truth'
 model.light = 'yes'
 model.description # => 'we need truth'
 model.light # => 'yes'
+
+# And then save them (Minimongo)
+model.earth = 'undiscovered'
+update(:models, {:_id => m._id}, m.to_h)
+
+# Refetch it and it's saved
+model = first(:models, :_id => m._id)
+m.earth # => 'undiscovered'
 
 # Returns nil if not found, doesn't raise an error
 model.darkness # => nil

@@ -13,7 +13,7 @@ module Mongo
 
       # To a BSON::Documents or models
       def to_a
-        Modelize.enable ? super.map{|d| modelize(d)} : super
+        Modelize.enable ? super.map{|doc| modelize(doc)} : super
       end
 
       # First BSON::Document or model
@@ -24,10 +24,8 @@ module Mongo
       private
 
       # Get the model class, BSON::Document if it doesn't exist
-      def modelize(d)
-        m = Object.const_get("#{Modelize.module}::#{self.collection.name[0..-2].capitalize}")
-        m.include ::Modelize::Core
-        m.new(d)
+      def modelize(doc)
+        Object.const_get("#{Modelize.module}::#{self.collection.name[0..-2].capitalize}").include(::Modelize::Core).new.tap{|m| m.doc = doc} rescue doc
       end
 
     end
