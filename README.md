@@ -43,7 +43,7 @@ model = $db[:models].find.first
 models = find(:models).to_a
 model = first(:models)
 ```
-The models will be of type "Model" if you've defined such as class
+The models will be of type "Model" if you've defined such as class.
 
 
 ### Contribute
