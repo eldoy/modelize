@@ -1,7 +1,7 @@
 # Modelize MongoDB Documents
 Automatically turn MongoDB BSON Documents into custom models.
 
-Works with [the official Ruby MongoDB driver](https://docs.mongodb.com/ruby-driver/master/quick-start/), [or Minimongo](https://github.com/fugroup/minimongo) if you want something even easier.
+Works with [the official Ruby MongoDB driver](https://docs.mongodb.com/ruby-driver/master/quick-start/), or [the fantastic Minimongo](https://github.com/fugroup/minimongo) if you want something easier.
 
 ### Installation
 ```ruby
