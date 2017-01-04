@@ -30,7 +30,7 @@ The gem works by adding some spice to the Mongo::Collection::View "to_a" and "fi
 # If you don't have bundler set up
 require 'modelize'
 
-# Create your model
+# Create your model, no includes necessary
 class Model
   # Your model definitions here ...
 end
@@ -70,7 +70,7 @@ m.earth # => 'undiscovered'
 # Returns nil if not found, doesn't raise an error
 model.darkness # => nil
 ```
-You can also add validations and other methods to your model class, it's very flexible.
+You can now add validations and other methods to your model, it's just a normal Ruby class.
 
 ### Contribute
 Created and maintained by [Fugroup Ltd.](https://www.fugroup.net) We are the creators of [CrowdfundHQ.](https://crowdfundhq.com)
