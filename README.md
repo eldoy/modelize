@@ -42,9 +42,9 @@ model = $db[:models].find.first
 # With Minimongo
 models = find(:models).to_a
 model = first(:models)
-
-# The models will be of type "Model" if you've defined such as class
 ```
+The models will be of type "Model" if you've defined such as class
+
 
 ### Contribute
 Created and maintained by [Fugroup Ltd.](https://www.fugroup.net) We are the creators of [CrowdfundHQ.](https://crowdfundhq.com)
