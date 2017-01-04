@@ -36,12 +36,12 @@ class Model
 end
 
 # With the Mongodb Ruby driver
-models = $db[:models].find.to_a
-model = $db[:models].find.first
+models = $db[:models].find.to_a # => [Model, Model]
+model = $db[:models].find.first # => Model
 
 # With Minimongo
-models = find(:models).to_a
-model = first(:models)
+models = find(:models).to_a     # => [Model, Model]
+model = first(:models)          # => Model
 ```
 The models will be of type "Model" if you've defined such as class. You can then do:
 ```ruby
