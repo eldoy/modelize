@@ -11,6 +11,9 @@ or add to your Gemfile. That's it!
 
 ### Settings
 ```ruby
+# Enable / disable Modelize on the fly
+Modelize.enable = true
+
 # Tell Modelize in which module to find your model class
 Modelize.module = ''
 
