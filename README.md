@@ -43,8 +43,26 @@ model = $db[:models].find.first
 models = find(:models).to_a
 model = first(:models)
 ```
-The models will be of type "Model" if you've defined such as class.
+The models will be of type "Model" if you've defined such as class. You can then do:
+```ruby
+model = first(:models)
 
+# The original BSON::Document
+model.doc # => BSON::Document instance
+
+# The model class accepts any method that BSON::Document accepts
+model.to_h # => {'_id' => BSON::ObjectId('586c4ac80aec08424e3a5287')}
+
+# You can read and write variables
+model.description = 'we need truth'
+model.light = 'yes'
+model.description # => 'we need truth'
+model.light # => 'yes'
+
+# Returns nil if not found, doesn't raise an error
+model.darkness # => nil
+```
+You can also add validations and other methods to your model class, it's very flexible.
 
 ### Contribute
 Created and maintained by [Fugroup Ltd.](https://www.fugroup.net) We are the creators of [CrowdfundHQ.](https://crowdfundhq.com)
