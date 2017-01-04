@@ -35,13 +35,17 @@ class Model
   # Your model definitions here ...
 end
 
-# With Minimongo
-models = find(:models).to_a     # => [Model] instead of [BSON::Document]
-model = first(:models)          # => Model instead of BSON::Document
+# Without Modelize, just pure Ruby driver
+models = find(:models).to_a     # => [BSON::Document, BSON::Document]
+model = first(:models)          # => BSON::Document
 
-# With the Mongodb Ruby driver
-models = $db[:models].find.to_a # => [Model] instead of [BSON::Document]
-model = $db[:models].find.first # => Model instead of BSON::Document
+# With Modelize and Minimongo
+models = find(:models).to_a     # => [Model, Model]
+model = first(:models)          # => Model
+
+# With Modelize and the Mongodb Ruby driver
+models = $db[:models].find.to_a # => [Model, Model]
+model = $db[:models].find.first # => Model
 ```
 The models will be of type "Model" if you've defined such as class. You can then do:
 ```ruby
