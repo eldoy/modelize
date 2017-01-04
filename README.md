@@ -36,12 +36,12 @@ class Model
 end
 
 # With Minimongo
-models = find(:models).to_a     # => [Model] not [BSON::Document]
-model = first(:models)          # => Model not BSON::Document
+models = find(:models).to_a     # => [Model] instead of [BSON::Document]
+model = first(:models)          # => Model instead of BSON::Document
 
 # With the Mongodb Ruby driver
-models = $db[:models].find.to_a # => [Model] not [BSON::Document]
-model = $db[:models].find.first # => Model not BSON::Document
+models = $db[:models].find.to_a # => [Model] instead of [BSON::Document]
+model = $db[:models].find.first # => Model instead of BSON::Document
 ```
 The models will be of type "Model" if you've defined such as class. You can then do:
 ```ruby
