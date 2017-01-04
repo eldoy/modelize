@@ -7,7 +7,7 @@ Works with [the official Ruby MongoDB driver](https://docs.mongodb.com/ruby-driv
 ```ruby
 gem install modelize
 ```
-or add to Gemfile. That's it!
+or add to your Gemfile. That's it!
 
 ### Settings
 ```ruby
