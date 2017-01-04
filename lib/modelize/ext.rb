@@ -1,7 +1,7 @@
 # # # # # # # # #
 # Patch the Mongo::Collection::View class to return documents as models
 # If you query the :models collection, if a Model class exists
-# and the setting Minimongo.model = true
+# and the setting Minimongo.enable = true
 #
 # Set Minimongo.modules = 'Fu::Models' if your models is inside a module,
 # default module is root '::'
